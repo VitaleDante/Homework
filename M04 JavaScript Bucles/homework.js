@@ -116,8 +116,8 @@ function operadoresLogicos(num1, num2, num3) {
    if(num1>num2 && num1>num3){return "Numero 1 es mayor y positivo"}
    else if(num1<0 || num2<0 || num3<0){return "Hay negativos"}
    else if(num3>num1 && num3>num2){num3++; return num3}
-   else if(num1==0 && num2==0 && num3==0){"Error"}
-   else false
+   else if(num1==0 && num2==0 && num3==0){return "Error"}
+   else return false
 }
 
 function esPrimo(num) {
@@ -127,18 +127,40 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+// Declaro una variable vacia, y realizo un if, para evaluar que el numero ingresado sea mayor a 1
+let primito
+if (num<2){
+    return false;
+ }
+//creo "contador" para contar cuantas veces da 0 el resto ya que si es un numero primo, esto solo puede ocurrir 2 veces. al dividir por "1" y al dividir por "num"
+let contador=0
+//seteo I en 1 para no dividir por cero, el ciclo se corta cuando I = num para llegar a dividirlo por si mismo
+ for(var i = 1; i <= num; i++){
+     if (num % i === 0){
+         contador++;
+     }
+ }
+ (contador === 2) ? primito=true : primito= false;
+ return primito
 }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   let suerte = !!(valor)
+   if (valor){return "Soy verdadero"}
+   else {return "Soy falso"}
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   num = num + "1"
+   if (num.length === 4){return true}
+   else {return false}
+   
 }
 
 function doWhile(num) {
@@ -146,6 +168,17 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   //seteo i en 0 para utlizarlo de contador
+   //creo resultado para almacenar el valor de num cada vuelta del ciclo
+   let i=0
+   let resultado = 0
+   do{
+      i = i+1;
+      num=num+5;
+       
+   }while (i<8);
+
+   return num
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
