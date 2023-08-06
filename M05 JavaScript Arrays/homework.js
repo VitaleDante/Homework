@@ -3,34 +3,44 @@
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
+   return array[0]
 }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
+   
+   return array[(array.length-1)]
 }
 
 function obtenerLargoDelArray(array) {
    // Retornar la longitud del arreglo recibido por parámetro.
    // Tu código:
+   return array.length
 }
 
 function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
+   let unoMas = array.map(element => {return element+1});
+   return unoMas
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
    // Agrega el "elemento" al final del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   array.push(elemento);
+   return array;
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
    // Agrega el "elemento" al comienzo del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   array.unshift(elemento);
+   return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -39,12 +49,37 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
+/*
+//1 creo una funcion flecha para agregarle un espacio a cada los elementos
+   let espacioExtra = palabras.map(element => {return element+" "});
+//2 el ultimo elemento lo guardo en una variable,
+   let ultimoElemento = espacioExtra[espacioExtra.length-1];
+//3 uso el metodo split para hacerlo un nuevo array declarando otra variable
+   let ultimoElementoArreglado = ultimoElemento.split("");
+//4 borro el espacio agregado en la nueva variable
+   ultimoElementoArreglado.pop();
+//5 convierto el array en un string y lo guardo en la variable ultimoElemento
+   ultimoElemento = ultimoElementoArreglado.join("");
+//6 a espacioExtra elimino el ultimo elemento del arreglo porque contiene el espacio
+   espacioExtra.pop();
+//7 agrego el ultimo elmento sin el espacio
+   espacioExtra.push(ultimoElementoArreglado)
+//8 Formo la frase 
+//9 Retorno la frase armada
+*/
+return palabras.join(" ");
+
 }
 
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+for (var i = 0; i < array.length; i++){
+   if (array[i] === elemento){
+      return true;
+   }
+}return false;
 }
 
 function agregarNumeros(arrayOfNums) {
