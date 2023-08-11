@@ -80,18 +80,36 @@ for (var i = 0; i < array.length; i++){
       return true;
    }
 }return false;
+
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   //separo el arreglo
+   
+   var sumar = 0;
+   var guardar = 0;
+   var resultado
+   for (var i = 0; i < arrayOfNums.length; i++){
+      guardar = arrayOfNums[(i)];
+      sumar = (sumar + guardar);
+      resultado = sumar
+   }
+   return resultado
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
+   var sumamos;
+   
+   for (var i = 0; i < resultadosTest.length; i++){
+      sumamos = sumamos+resultadosTest[i]
+   }
+   return (sumamos/resultadosTest.length)
 }
 
 function numeroMasGrande(arrayOfNums) {
